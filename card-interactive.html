@@ -903,10 +903,47 @@ body[data-type="bday"][data-style="classic"] .polaroid-line2{color:var(--ink-dim
     </div>
     <div class="bighead" id="close-line">Sealed with love 🤍</div>
     <div class="subhead" id="close-sub" style="display:none"></div>
+    
+    <!-- Billion-Dollar Recipient Reaction Bridge -->
+    <button type="button" id="sendLoveBackBtn" style="background:linear-gradient(90deg,#FF5CA8,#D83F87); color:#fff; font-weight:700; font-size:14px; padding:12px 24px; border-radius:999px; box-shadow:0 12px 24px -8px rgba(255,92,168,0.7); display:inline-flex; align-items:center; gap:8px; margin: 4px 0 10px; cursor:pointer; transition:transform .2s;" onclick="sendLoveBack()">
+      <span>💖</span> Send Love Back
+    </button>
+    <div id="loveBackSentNotice" style="display:none; font-size:13px; color:#FF5CA8; font-weight:700; margin-bottom:8px;">
+      Sent! You made their heart flutter ✨
+    </div>
+
     <button class="replay-btn" id="replay">↻ Watch again</button>
     <a class="make-one" id="make-one-cta" href="/?utm_source=recipient_card&utm_medium=card_close" target="_top">Make one for someone you love →</a>
     <div class="heart-burst" id="close-burst" aria-hidden="true"></div>
   </section>
+
+  <script>
+    function sendLoveBack() {
+      const btn = document.getElementById('sendLoveBackBtn');
+      const notice = document.getElementById('loveBackSentNotice');
+      if (btn) btn.style.transform = 'scale(1.15)';
+      
+      // Heart burst particles
+      for (let i = 0; i < 24; i++) {
+        const h = document.createElement('div');
+        h.textContent = ['💖', '💕', '✨', '🤍', '🥰'][Math.floor(Math.random() * 5)];
+        h.style.cssText = `position:fixed; left:${window.innerWidth/2}px; top:${window.innerHeight*0.7}px; font-size:${18 + Math.random()*18}px; pointer-events:none; z-index:9999; transition:all 1.2s cubic-bezier(.1,.8,.3,1);`;
+        document.body.appendChild(h);
+        setTimeout(() => {
+          const dx = (Math.random() - 0.5) * 280;
+          const dy = -140 - Math.random() * 260;
+          h.style.transform = `translate(${dx}px, ${dy}px) scale(${0.8 + Math.random()*0.8}) rotate(${(Math.random()-0.5)*60}deg)`;
+          h.style.opacity = '0';
+        }, 10);
+        setTimeout(() => h.remove(), 1300);
+      }
+
+      setTimeout(() => {
+        if (btn) btn.style.display = 'none';
+        if (notice) notice.style.display = 'block';
+      }, 400);
+    }
+  </script>
 
 </div>
 <script src="card-art.js?v=1"></script>

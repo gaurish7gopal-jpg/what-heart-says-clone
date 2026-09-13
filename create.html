@@ -60,13 +60,27 @@
       <input type="text" class="builder-pink-input" id="msg3" value="Please forgive me... You mean so much to me."/>
     </div>
 
-    <div class="builder-msg-group">
-      <label class="builder-msg-label" for="personalNote">Personal Note 💌</label>
-      <textarea class="builder-textarea" id="personalNote" maxlength="500">I'm really sorry, my love. I accidentally upset the most precious and adorable person in my life — you. 🥺
+      <!-- AI HeartWriter Studio Co-Pilot -->
+      <div class="ai-heartwriter-box">
+        <div class="ai-heartwriter-header">
+          <span class="ai-heartwriter-badge">✨ AI HeartWriter Co-Pilot</span>
+          <span style="font-size: 11px; color: #8A7B84;">Click tone to generate</span>
+        </div>
+        <div class="ai-tone-chips">
+          <button type="button" class="ai-tone-chip" onclick="applyAITone('poetic')">🌹 Deeply Poetic</button>
+          <button type="button" class="ai-tone-chip" onclick="applyAITone('playful')">😜 Cute & Playful</button>
+          <button type="button" class="ai-tone-chip" onclick="applyAITone('tearjerker')">🥺 Tear-jerker</button>
+          <button type="button" class="ai-tone-chip" onclick="applyAITone('short')">⚡ Short & Sweet</button>
+        </div>
+      </div>
+
+      <div class="builder-msg-group">
+        <label class="builder-msg-label" for="personalNote">Personal Note 💌</label>
+        <textarea class="builder-textarea" id="personalNote" maxlength="500">I'm really sorry, my love. I accidentally upset the most precious and adorable person in my life — you. 🥺
 
 Please forgive me if I hurt you or wasted even a little of your precious time. I promise I didn't mean to. 🥺 💕</textarea>
-      <div style="display: flex; justify-content: flex-end; font-size: 11.5px; color: #8A7B84; margin-top: 4px;" id="charCounter">219/500</div>
-    </div>
+        <div style="display: flex; justify-content: flex-end; font-size: 11.5px; color: #8A7B84; margin-top: 4px;" id="charCounter">219/500</div>
+      </div>
 
     <button type="button" class="builder-primary-btn" id="step2NextBtn">Next</button>
   </div>
@@ -120,12 +134,36 @@ Please forgive me if I hurt you or wasted even a little of your precious time. I
       </div>
     </div>
 
+    <!-- Billion-Dollar Keepsake Passes & Add-ons -->
+    <div style="text-align: left; margin: 24px 0 10px;">
+      <div style="font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #FF5CA8; margin-bottom: 8px;">
+        ✨ Premium Keepsake Upgrades
+      </div>
+      <div class="keepsake-options-grid">
+        <div class="keepsake-card" id="keepsakePassVideo" onclick="toggleKeepsake(this, 99)">
+          <div class="keepsake-header">
+            <span>🎥 Ultra HD Video Pass</span>
+            <span class="keepsake-price">+₹99</span>
+          </div>
+          <div class="keepsake-desc">Downloadable MP4 video keepsake of their reactions & music to save on camera roll forever.</div>
+        </div>
+
+        <div class="keepsake-card" id="keepsakePassMidnight" onclick="toggleKeepsake(this, 49)">
+          <div class="keepsake-header">
+            <span>⏰ Midnight Vault Reveal</span>
+            <span class="keepsake-price">+₹49</span>
+          </div>
+          <div class="keepsake-desc">Time-locks the card so it reveals at exactly 12:00 AM on their special day with confetti burst.</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Pricing Row (Screenshot 8) -->
     <div class="pricing-strip">
       <span>Special Price 🛍️</span>
-      <span class="original-price">₹499</span>
-      <span class="deal-price">₹199</span>
-      <span class="discount-badge">60% OFF</span>
+      <span class="original-price" data-price-orig>₹499</span>
+      <span class="deal-price" id="totalDisplayPrice" data-price-base>₹199</span>
+      <span class="discount-badge" data-price-discount>60% OFF</span>
     </div>
 
     <!-- Mega CTA Button (Screenshot 8) -->
@@ -148,9 +186,15 @@ Please forgive me if I hurt you or wasted even a little of your precious time. I
       
       <input type="text" id="finalUrlInput" readonly style="width:100%; padding:12px; border-radius:12px; border:1.5px solid #E6D2DD; font-size:13px; font-weight:600; margin-bottom:16px; background:#FAF5F8;"/>
       
-      <div style="display:flex; gap:10px;">
-        <button type="button" id="copyFinalBtn" style="flex:1; background:var(--mhc-magenta); color:#fff; padding:14px; border-radius:999px; font-weight:700;">Copy Link</button>
-        <a id="openFinalBtn" target="_blank" style="flex:1; background:#110B18; color:#fff; padding:14px; border-radius:999px; font-weight:700; display:flex; align-items:center; justify-content:center;">Open Card ↗</a>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a id="whatsappShareBtn" target="_blank" style="background:#25D366; color:#fff; padding:14px; border-radius:999px; font-weight:700; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; box-shadow: 0 10px 20px -6px rgba(37, 211, 102, 0.5);">
+          <span>💬</span> Send Directly on WhatsApp
+        </a>
+
+        <div style="display:flex; gap:10px;">
+          <button type="button" id="copyFinalBtn" style="flex:1; background:var(--mhc-magenta); color:#fff; padding:14px; border-radius:999px; font-weight:700;">Copy Link</button>
+          <a id="openFinalBtn" target="_blank" style="flex:1; background:#110B18; color:#fff; padding:14px; border-radius:999px; font-weight:700; display:flex; align-items:center; justify-content:center; text-decoration:none;">Open Card ↗</a>
+        </div>
       </div>
       <button type="button" onclick="document.getElementById('successModal').style.display='none'" style="margin-top:16px; font-size:13px; color:#8A7B84; text-decoration:underline;">Back to Editor</button>
     </div>
@@ -325,10 +369,83 @@ Please forgive me if I hurt you or wasted even a little of your precious time. I
     const openFinalBtn = document.getElementById('openFinalBtn');
     const copyFinalBtn = document.getElementById('copyFinalBtn');
 
+    // AI HeartWriter Co-Pilot Tones
+    const AI_TONES = {
+      sorry: {
+        poetic: "I never meant to bring a single shadow into your sunny world. My heart aches knowing I caused you hurt. Let me spend tomorrow making you smile again. 🥺 💕",
+        playful: "I was a massive goofball and made a silly mess of things! Forgive this adorable idiot who loves you to pieces? 🥺 🍕",
+        tearjerker: "You are the absolute light of my life, and hurting you breaks my own soul in two. Please forgive me, my love. 🤍",
+        short: "I'm so sorry, my love. You mean the world to me. Forgive me? 💕"
+      },
+      bday: {
+        poetic: "May every hour of this year be filled with laughter that makes your stomach hurt and quiet moments of pure peace. Happy Birthday! ✨",
+        playful: "Level up unlocked! You don't look a day over ridiculously gorgeous. Happy Birthday, superstar! 🎂 🚀",
+        tearjerker: "Having you in my life is the greatest gift universe ever granted me. May you always know how deeply loved you are. 💛",
+        short: "Happy Birthday! May all your wishes take flight today! 🎈"
+      },
+      prop: {
+        poetic: "In a universe of billions, my soul recognized yours in a heartbeat. Marry me and let's turn every single ordinary day into magic. 💍",
+        playful: "Warning: saying yes to this comes with unlimited forehead kisses, terrible jokes, and a lifetime of love. Say yes! 💍 🤍",
+        tearjerker: "I never knew what forever felt like until I looked into your eyes. Be my home, be my always. Will you marry me? 💍 ✨",
+        short: "You and me, together forever. Will you marry me? 💍"
+      },
+      anniv: {
+        poetic: "Years come and go, but looking at you still takes my breath away exactly like the first time. Happy Anniversary, my heart. 🥂",
+        playful: "Another year of you putting up with my nonsense and me falling even more in love with you! Happy Anniversary! 💞",
+        tearjerker: "Thank you for holding my hand through every storm and every sunshine. You are my greatest adventure. 💖",
+        short: "Happy Anniversary! I'd choose you a million times over. 💞"
+      }
+    };
+
+    window.applyAITone = function(tone) {
+      const toneDict = AI_TONES[currentFlow] || AI_TONES.sorry;
+      const text = toneDict[tone] || toneDict.poetic;
+      noteInput.value = text;
+      charCounter.textContent = `${text.length}/500`;
+    };
+
+    // Keepsake Add-on state & dynamic calculation
+    let keepsakeAddonTotal = 0;
+    window.toggleKeepsake = function(el, amount) {
+      el.classList.toggle('selected');
+      if (el.classList.contains('selected')) {
+        keepsakeAddonTotal += amount;
+      } else {
+        keepsakeAddonTotal -= amount;
+      }
+      updateCheckoutPrice();
+    };
+
+    function updateCheckoutPrice() {
+      const globalInfo = window.WHS_Global 
+        ? window.WHS_Global.getCurrencies()[window.WHS_Global.getCurrentCurrency()] 
+        : { base: 199, symbol: '₹' };
+      const total = globalInfo.base + keepsakeAddonTotal;
+      const displayStr = window.WHS_Global 
+        ? window.WHS_Global.formatPrice(total, window.WHS_Global.getCurrentCurrency())
+        : `₹${total}`;
+      
+      const totalEl = document.getElementById('totalDisplayPrice');
+      if (totalEl) totalEl.textContent = displayStr;
+      
+      if (getCardBtn) {
+        getCardBtn.textContent = `Get this at ${displayStr}`;
+      }
+    }
+
     getCardBtn.addEventListener('click', () => {
       const fullUrl = new URL(getCardUrl(), window.location.href).href;
       finalUrlInput.value = fullUrl;
       openFinalBtn.href = fullUrl;
+      
+      // Configure 1-Tap WhatsApp Direct Send
+      const recipientName = recipientInput.value.trim() || 'my love';
+      const shareMsg = encodeURIComponent(`Hey ${recipientName}, I made a little something special just for you from the bottom of my heart 💌✨ Tap to open: ${fullUrl}`);
+      const whatsappBtn = document.getElementById('whatsappShareBtn');
+      if (whatsappBtn) {
+        whatsappBtn.href = `https://api.whatsapp.com/send?text=${shareMsg}`;
+      }
+
       successModal.style.display = 'flex';
     });
 
@@ -342,5 +459,6 @@ Please forgive me if I hurt you or wasted even a little of your precious time. I
     // Initialize
     applyFlow(currentFlow);
   </script>
+  <script src="global-engine.js"></script>
 </body>
 </html>

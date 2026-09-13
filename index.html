@@ -28,7 +28,19 @@
         <span class="brand-text">What Heart Says</span>
       </a>
       
-      <a href="#experiences" class="nav-cta">Create a card</a>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div class="currency-selector-wrap currency-selector">
+          <span>🌐</span>
+          <select id="currencySelect" onchange="window.WHS_Global && window.WHS_Global.setCurrency(this.value)" aria-label="Select Currency">
+            <option value="INR">₹ INR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+            <option value="GBP">£ GBP</option>
+            <option value="AED">AED د.إ</option>
+          </select>
+        </div>
+        <a href="#experiences" class="nav-cta">Create a card</a>
+      </div>
 
       <div style="position:relative">
         <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Menu" class="menu-trigger" id="menuToggle">
@@ -496,10 +508,11 @@
 
   <!-- Sticky Bottom Bar on Mobile -->
   <div class="hs-sticky-bar">
-    <div style="font-size:12.5px;font-weight:700;color:var(--mhc-ink-2);line-height:1.35;min-width:0">From ₹199 · ready in 2 min</div>
+    <div style="font-size:12.5px;font-weight:700;color:var(--mhc-ink-2);line-height:1.35;min-width:0">From <span data-price-base>₹199</span> · ready in 2 min</div>
     <a style="flex-shrink:0;display:inline-flex;align-items:center;gap:7px;background:var(--mhc-magenta);color:#fff;padding:12px 20px;border-radius:999px;font-weight:700;font-size:14.5px;box-shadow:0 14px 28px -12px rgba(194,24,107,.6);white-space:nowrap" href="create.html?flow=bday">Start your card →</a>
   </div>
 
+  <script src="global-engine.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
