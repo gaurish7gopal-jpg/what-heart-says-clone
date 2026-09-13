@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Create Your Card · What Heart Says</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body class="builder-body">
+  <div class="builder-space-stars"></div>
+
+  <!-- Back button -->
+  <button type="button" class="builder-back-btn" id="backBtn" aria-label="Go Back">‹</button>
+
+  <!-- Stickers Header Badge (Screenshot 6) -->
+  <div class="builder-stickers-badge" id="stickerBadge">
+    <div class="sticker-pill sticker-yellow">CREATE A</div>
+    <div class="sticker-pill sticker-orange" id="stickerMiddle">SORRY</div>
+    <div class="sticker-pill sticker-blue">CARD!</div>
+  </div>
+
+  <!-- STEP 1: Recipient Name (Screenshot 6) -->
+  <div class="builder-white-card" id="step1Card">
+    <h1 class="builder-card-title" id="step1Title">Who do you want to say sorry to?</h1>
+    <div style="margin: 24px 0 10px;">
+      <input type="text" class="builder-pink-input" id="recipientNameInput" placeholder="Enter their name" autocomplete="off" autofocus/>
+    </div>
+    <button type="button" class="builder-primary-btn" id="step1NextBtn">Next</button>
+    <div style="font-size: 13px; color: #8A7B84; margin-top: 14px;" id="step1Hint">Add their name to continue</div>
+
+    <div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.06);">
+      <div style="font-size: 13px; color: #6C5E67; margin-bottom: 12px;">Explore more heartfelt experiences:</div>
+      <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+        <button type="button" class="exp-chip" data-switch="bday">Birthday</button>
+        <button type="button" class="exp-chip" data-switch="prop">Proposal</button>
+        <button type="button" class="exp-chip" data-switch="sorry">Sorry</button>
+        <button type="button" class="exp-chip" data-switch="anniv">Anniversary</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Custom Messages & Personal Note (Screenshot 7) -->
+  <div class="builder-white-card" id="step2Card" style="display: none; max-width: 540px;">
+    <h1 class="builder-card-title" id="step2Title">Your sorry messages</h1>
+    <div class="builder-card-sub">Edit these to make them personal</div>
+
+    <div class="builder-msg-group">
+      <label class="builder-msg-label" for="msg1">Message 1</label>
+      <input type="text" class="builder-pink-input" id="msg1" value="I messed up... and I'm really sorry for that."/>
+    </div>
+
+    <div class="builder-msg-group">
+      <label class="builder-msg-label" for="msg2">Message 2</label>
+      <input type="text" class="builder-pink-input" id="msg2" value="I promise I'll be better for you."/>
+    </div>
+
+    <div class="builder-msg-group">
+      <label class="builder-msg-label" for="msg3">Message 3</label>
+      <input type="text" class="builder-pink-input" id="msg3" value="Please forgive me... You mean so much to me."/>
+    </div>
+
+    <div class="builder-msg-group">
+      <label class="builder-msg-label" for="personalNote">Personal Note 💌</label>
+      <textarea class="builder-textarea" id="personalNote" maxlength="500">I'm really sorry, my love. I accidentally upset the most precious and adorable person in my life — you. 🥺
+
+Please forgive me if I hurt you or wasted even a little of your precious time. I promise I didn't mean to. 🥺 💕</textarea>
+      <div style="display: flex; justify-content: flex-end; font-size: 11.5px; color: #8A7B84; margin-top: 4px;" id="charCounter">219/500</div>
+    </div>
+
+    <button type="button" class="builder-primary-btn" id="step2NextBtn">Next</button>
+  </div>
+
+  <!-- STEP 3: Preview & Choose Style / Checkout (Screenshot 8) -->
+  <div id="step3Container" style="display: none; width: 100%; max-width: 680px; text-align: center; z-index: 10;">
+    <h1 style="font-family: var(--mhc-display); font-size: 32px; margin-bottom: 6px;">Preview & Choose Style</h1>
+    <p style="font-size: 14px; color: #B9A8B5; margin-bottom: 24px;">Pick a style — this is how it will look</p>
+
+    <!-- Glowing Phone Preview with Controls -->
+    <div style="display: flex; justify-content: center; position: relative;">
+      <div class="phone-mockup" style="box-shadow: 0 0 60px 10px rgba(244, 184, 212, 0.35); border-color: #F8DCE8;">
+        <div class="phone-notch">
+          <div class="phone-notch-camera"></div>
+          <div class="phone-notch-speaker"></div>
+        </div>
+        <div class="phone-screen">
+          <iframe id="previewIframe" src="about:blank" title="Card Final Preview"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Style Picker: Cute & Sweet vs Romantic One (Screenshot 8) -->
+    <div class="style-picker-row">
+      <button type="button" class="style-picker-btn" id="styleCuteBtn">
+        <div style="font-size: 12px; margin-bottom: 4px;">♥ ♡ ♥</div>
+        <div style="font-weight: 700; font-size: 14px;">Cute & Sweet</div>
+        <div style="font-size: 11px; opacity: 0.8;">Warm & Adorable</div>
+      </button>
+
+      <button type="button" class="style-picker-btn active" id="styleRomanticBtn">
+        <div style="font-size: 12px; margin-bottom: 4px;">💜 ✨ 💕</div>
+        <div style="font-weight: 700; font-size: 14px;">Romantic One</div>
+        <div style="font-size: 11px; opacity: 0.8;">Dark & Heartfelt</div>
+      </button>
+    </div>
+
+    <!-- Value Proposition Chips (Screenshot 8) -->
+    <div class="value-chips-row">
+      <div class="value-chip-card">
+        🔗 Personal Link
+        <span>Active 6+ months</span>
+      </div>
+      <div class="value-chip-card">
+        ▦ Custom QR Code
+        <span>Scan anywhere</span>
+      </div>
+      <div class="value-chip-card">
+        🎥 Personalized Video
+        <span>Yours to keep forever</span>
+      </div>
+    </div>
+
+    <!-- Pricing Row (Screenshot 8) -->
+    <div class="pricing-strip">
+      <span>Special Price 🛍️</span>
+      <span class="original-price">₹499</span>
+      <span class="deal-price">₹199</span>
+      <span class="discount-badge">60% OFF</span>
+    </div>
+
+    <!-- Mega CTA Button (Screenshot 8) -->
+    <button type="button" class="builder-primary-btn" id="getCardBtn" style="max-width: 480px; margin: 0 auto; font-size: 18px; padding: 18px;">
+      Get this at ₹199
+    </button>
+
+    <div class="trust-badges-row">
+      <span>✓ Secure payment via Razorpay</span>
+      <span>⚡ Instant delivery after payment</span>
+    </div>
+  </div>
+
+  <!-- Generated Success Modal -->
+  <div id="successModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:100; align-items:center; justify-content:center; padding:20px;">
+    <div style="background:#fff; color:#110B18; border-radius:24px; padding:32px; max-width:440px; width:100%; text-align:center;">
+      <div style="font-size:44px; margin-bottom:12px;">🎉 💌</div>
+      <h2 style="font-family:var(--mhc-display); font-size:24px; margin-bottom:8px;">Your card link is ready!</h2>
+      <p style="font-size:14px; color:#6C5E67; margin-bottom:20px;">Copy your private link and send it directly on WhatsApp.</p>
+      
+      <input type="text" id="finalUrlInput" readonly style="width:100%; padding:12px; border-radius:12px; border:1.5px solid #E6D2DD; font-size:13px; font-weight:600; margin-bottom:16px; background:#FAF5F8;"/>
+      
+      <div style="display:flex; gap:10px;">
+        <button type="button" id="copyFinalBtn" style="flex:1; background:var(--mhc-magenta); color:#fff; padding:14px; border-radius:999px; font-weight:700;">Copy Link</button>
+        <a id="openFinalBtn" target="_blank" style="flex:1; background:#110B18; color:#fff; padding:14px; border-radius:999px; font-weight:700; display:flex; align-items:center; justify-content:center;">Open Card ↗</a>
+      </div>
+      <button type="button" onclick="document.getElementById('successModal').style.display='none'" style="margin-top:16px; font-size:13px; color:#8A7B84; text-decoration:underline;">Back to Editor</button>
+    </div>
+  </div>
+
+  <script>
+    // State management
+    const params = new URLSearchParams(window.location.search);
+    let currentFlow = params.get('flow') || 'sorry';
+    let currentStep = 1;
+    let currentStyle = 'romantic'; // 'cute' or 'romantic'
+
+    const flowData = {
+      sorry: {
+        sticker: 'SORRY',
+        step1Title: 'Who do you want to say sorry to?',
+        step2Title: 'Your sorry messages',
+        placeholder: 'Enter their name',
+        m1: "I messed up... and I'm really sorry for that.",
+        m2: "I promise I'll be better for you.",
+        m3: "Please forgive me... You mean so much to me.",
+        note: "I'm really sorry, my love. I accidentally upset the most precious and adorable person in my life — you. 🥺\n\nPlease forgive me if I hurt you or wasted even a little of your precious time. I promise I didn't mean to. 🥺 💕"
+      },
+      bday: {
+        sticker: 'BIRTHDAY',
+        step1Title: 'Whose birthday is coming up?',
+        step2Title: 'Your birthday wishes',
+        placeholder: 'Enter birthday person\'s name',
+        m1: "Another trip around the sun, and you're brighter than ever.",
+        m2: "Make a big wish and blow out all your candles!",
+        m3: "May this year bring you all the magic you bring to others.",
+        note: "Happy Birthday! You have an extraordinary way of making everyone feel loved and cherished. Today, I hope you feel that exact same joy returned to you tenfold. 🎂 ✨"
+      },
+      prop: {
+        sticker: 'PROPOSAL',
+        step1Title: 'Who are you asking the question to?',
+        step2Title: 'Your proposal lines',
+        placeholder: 'Enter your soulmate\'s name',
+        m1: "From our first coffee to every quiet sunset with you...",
+        m2: "I realized my happiest days begin and end with your smile.",
+        m3: "There's only one question left for my heart to ask...",
+        note: "Will you marry me? Let's build a home out of laughter, inside jokes, and unconditional love. There's no one else I'd rather do forever with. 💍"
+      },
+      anniv: {
+        sticker: 'ANNIVERSARY',
+        step1Title: 'Whose anniversary is it?',
+        step2Title: 'Your anniversary memories',
+        placeholder: 'Enter their name',
+        m1: "Another chapter of our favorite love story.",
+        m2: "Our love meter is officially off the charts.",
+        m3: "Every single day with you is my new favorite day.",
+        note: "Happy Anniversary, my love. Thank you for being my anchor, my best friend, and my favorite adventure. Here is to a lifetime more. 💞"
+      }
+    };
+
+    // Elements
+    const stickerMiddle = document.getElementById('stickerMiddle');
+    const step1Title = document.getElementById('step1Title');
+    const step2Title = document.getElementById('step2Title');
+    const recipientInput = document.getElementById('recipientNameInput');
+    const msg1Input = document.getElementById('msg1');
+    const msg2Input = document.getElementById('msg2');
+    const msg3Input = document.getElementById('msg3');
+    const noteInput = document.getElementById('personalNote');
+    const charCounter = document.getElementById('charCounter');
+    const previewIframe = document.getElementById('previewIframe');
+
+    const step1Card = document.getElementById('step1Card');
+    const step2Card = document.getElementById('step2Card');
+    const step3Container = document.getElementById('step3Container');
+    const stickerBadge = document.getElementById('stickerBadge');
+    const backBtn = document.getElementById('backBtn');
+
+    function applyFlow(flow) {
+      currentFlow = flow;
+      const data = flowData[flow];
+      stickerMiddle.textContent = data.sticker;
+      step1Title.textContent = data.step1Title;
+      step2Title.textContent = data.step2Title;
+      recipientInput.placeholder = data.placeholder;
+      msg1Input.value = data.m1;
+      msg2Input.value = data.m2;
+      msg3Input.value = data.m3;
+      noteInput.value = data.note;
+      updateCharCounter();
+    }
+
+    function updateCharCounter() {
+      charCounter.textContent = `${noteInput.value.length}/500`;
+    }
+    noteInput.addEventListener('input', updateCharCounter);
+
+    // Flow switcher buttons in Step 1
+    document.querySelectorAll('[data-switch]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        applyFlow(btn.dataset.switch);
+      });
+    });
+
+    // Step navigation
+    document.getElementById('step1NextBtn').addEventListener('click', () => {
+      const name = recipientInput.value.trim();
+      if (!name) {
+        recipientInput.focus();
+        recipientInput.style.borderColor = '#E0457B';
+        return;
+      }
+      currentStep = 2;
+      step1Card.style.display = 'none';
+      step2Card.style.display = 'block';
+    });
+
+    document.getElementById('step2NextBtn').addEventListener('click', () => {
+      currentStep = 3;
+      step2Card.style.display = 'none';
+      stickerBadge.style.display = 'none';
+      step3Container.style.display = 'block';
+      loadIframePreview();
+    });
+
+    backBtn.addEventListener('click', () => {
+      if (currentStep === 1) {
+        window.location.href = 'index.html';
+      } else if (currentStep === 2) {
+        currentStep = 1;
+        step2Card.style.display = 'none';
+        step1Card.style.display = 'block';
+      } else if (currentStep === 3) {
+        currentStep = 2;
+        step3Container.style.display = 'none';
+        stickerBadge.style.display = 'flex';
+        step2Card.style.display = 'block';
+      }
+    });
+
+    // Style picker
+    const styleCuteBtn = document.getElementById('styleCuteBtn');
+    const styleRomanticBtn = document.getElementById('styleRomanticBtn');
+
+    styleCuteBtn.addEventListener('click', () => {
+      currentStyle = 'cute';
+      styleCuteBtn.classList.add('active');
+      styleRomanticBtn.classList.remove('active');
+      loadIframePreview();
+    });
+
+    styleRomanticBtn.addEventListener('click', () => {
+      currentStyle = 'romantic';
+      styleRomanticBtn.classList.add('active');
+      styleCuteBtn.classList.remove('active');
+      loadIframePreview();
+    });
+
+    function getCardUrl() {
+      const recipient = encodeURIComponent(recipientInput.value.trim() || 'You');
+      const m1 = encodeURIComponent(msg1Input.value.trim());
+      const m2 = encodeURIComponent(msg2Input.value.trim());
+      const m3 = encodeURIComponent(msg3Input.value.trim());
+      const note = encodeURIComponent(noteInput.value.trim());
+      const styleParam = currentStyle === 'cute' ? '&style=cute' : '';
+      return `card-interactive.html?type=${currentFlow}&autoplay=1&preview=1&p1=${recipient}&m1=${m1}&m2=${m2}&m3=${m3}&note=${note}${styleParam}`;
+    }
+
+    function loadIframePreview() {
+      previewIframe.src = getCardUrl();
+    }
+
+    // Checkout / Get Card button (Screenshot 8)
+    const getCardBtn = document.getElementById('getCardBtn');
+    const successModal = document.getElementById('successModal');
+    const finalUrlInput = document.getElementById('finalUrlInput');
+    const openFinalBtn = document.getElementById('openFinalBtn');
+    const copyFinalBtn = document.getElementById('copyFinalBtn');
+
+    getCardBtn.addEventListener('click', () => {
+      const fullUrl = new URL(getCardUrl(), window.location.href).href;
+      finalUrlInput.value = fullUrl;
+      openFinalBtn.href = fullUrl;
+      successModal.style.display = 'flex';
+    });
+
+    copyFinalBtn.addEventListener('click', () => {
+      finalUrlInput.select();
+      navigator.clipboard.writeText(finalUrlInput.value);
+      copyFinalBtn.textContent = 'Copied! ✓';
+      setTimeout(() => { copyFinalBtn.textContent = 'Copy Link'; }, 2000);
+    });
+
+    // Initialize
+    applyFlow(currentFlow);
+  </script>
+</body>
+</html>

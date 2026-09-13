@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>What Heart Says — Technical SEO & CRO Audit Report</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      background: #fdf8fb;
+      padding: 40px 20px;
+    }
+    .report-card {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 48px;
+      box-shadow: 0 20px 50px -25px rgba(38,28,34,.18);
+      border: 1px solid rgba(38,28,34,.08);
+      font-family: var(--mhc-body);
+      color: var(--mhc-ink);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .badge-critical { background: #fee2e2; color: #dc2626; }
+    .badge-high { background: #ffedd5; color: #ea580c; }
+    .badge-medium { background: #fef9c3; color: #ca8a04; }
+    .badge-success { background: #dcfce7; color: #16a34a; }
+    
+    h1 {
+      font-family: var(--mhc-display);
+      font-size: clamp(32px, 5vw, 44px);
+      margin: 16px 0 8px;
+    }
+    h2 {
+      font-family: var(--mhc-display);
+      font-size: 24px;
+      margin: 32px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid rgba(38,28,34,.06);
+    }
+    h3 {
+      font-family: var(--mhc-display);
+      font-size: 19px;
+      margin: 20px 0 8px;
+    }
+    p, li {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--mhc-ink-2);
+      margin-bottom: 12px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px 14px;
+      border: 1px solid rgba(38,28,34,.1);
+      text-align: left;
+    }
+    th {
+      background: #fdf2f7;
+      font-weight: 700;
+      color: var(--mhc-ink);
+    }
+    .callout {
+      background: #fdf2f7;
+      border-left: 4px solid var(--mhc-magenta);
+      padding: 16px 20px;
+      border-radius: 0 14px 14px 0;
+      margin: 18px 0;
+    }
+    .print-btn {
+      float: right;
+      background: var(--mhc-magenta);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .report-card { border: none; box-shadow: none; padding: 0; }
+      .print-btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="report-card">
+    <button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+    <div class="badge badge-success">Audit & Fixes Complete</div>
+    <h1>What Heart Says — Technical SEO & CRO Report</h1>
+    <p style="font-size: 14px; color: var(--mhc-ink-2);">
+      <strong>Target:</strong> whatheartsays.com · <strong>Date:</strong> March 2026 · <strong>Scope:</strong> Core Homepage + 9 Subpages
+    </p>
+
+    <div class="callout">
+      <strong>Key Takeaway:</strong> What Heart Says possesses strong emotional copywriting and product-market fit. By resolving canonical duplication, routing unique Open Graph payloads per card type, curing empty client shells with crawlable semantic copy, and making legal identity and refund terms visible upfront, organic discoverability and checkout trust receive a substantial lift.
+    </div>
+
+    <h2>🔴 1. Critical Technical & SEO Fixes (Implemented)</h2>
+    
+    <h3>1.1 Broken Canonicals on `/privacy` and `/terms`</h3>
+    <p>Both legal pages incorrectly pointed their canonical link to the homepage, signaling to search engines that they were redundant duplicates. <strong>Fixed:</strong> Canonical tags are now self-referencing on both routes.</p>
+
+    <h3>1.2 Stagnant Open Graph Data Across All Product Routes</h3>
+    <p>Product pages (`/birthday`, `/proposal`, `/sorry`, `/anniversary`) outputted generic homepage metadata. WhatsApp and Instagram shares showed generic copy instead of the actual card context. <strong>Fixed:</strong> Every experience now injects custom `og:title`, `og:description`, `og:url`, and tailored social preview cards.</p>
+
+    <h3>1.3 Missing Social Image on `/blog`</h3>
+    <p>The blog was missing `og:image` and `twitter:image`. <strong>Fixed:</strong> Added high-resolution 1200×630 Open Graph fallback images.</p>
+
+    <h3>1.4 Dead Anchor Nav Links on Subpages</h3>
+    <p>The navigation on `/blog` pointed to relative hashes (`#experiences`, `#how`, `#stories`), resulting in dead clicks. <strong>Fixed:</strong> All subpage navigation headers now target root anchors (`index.html#experiences`, `index.html#how`, `index.html#stories`).</p>
+
+    <h2>🟠 2. CRO & Trust Enhancements</h2>
+    
+    <h3>2.1 Server-Rendered Semantic Intro Copy</h3>
+    <p>All experience pages now include visible, server-rendered `<h1>` headers and keyword-dense introductions above the builder mockups, giving Googlebot crawlable text for search queries like <em>"interactive digital birthday card"</em> and <em>"unrejectable proposal card"</em>.</p>
+
+    <h3>2.2 Front-Facing Legal Identity</h3>
+    <p>Surfaced registered company information (<strong>Zenaclub Tech (OPC) Private Limited, Faridabad</strong>) in the global footer and About page to build trust with cold social traffic.</p>
+
+    <h3>2.3 Refund Guarantee at Point of Conversion</h3>
+    <p>Integrated a prominent trust strip: <em>"Preview free · Pay ₹199 · 24-hr refund guarantee if unopened"</em> directly adjacent to all primary call-to-action buttons.</p>
+
+    <h3>2.4 Price Inconsistency Rectified</h3>
+    <p>Standardized testimonial pricing to ₹199 across all reviews, removing outdated ₹99 references.</p>
+
+    <h3>2.5 Schema.org FAQPage & Product Structured Data</h3>
+    <p>Injected Schema.org `FAQPage` JSON-LD on `/faq` for Google Rich Snippets, and Schema.org `Product` markup on experience pages with pricing and ratings.</p>
+
+    <h2>📋 Audit Matrix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Canonical Status</th>
+          <th>Open Graph Status</th>
+          <th>Structured Data</th>
+          <th>CRO Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Homepage (/)</strong></td>
+          <td><span class="badge badge-success">Valid</span></td>
+          <td><span class="badge badge-success">Valid</span></td>
+          <td>Organization, WebSite</td>
+          <td>Hero social proof + Refund strip added</td>
+        </tr>
+        <tr>
+          <td><strong>/birthday</strong></td>
+          <td><span class="badge badge-success">Self-canonical</span></td>
+          <td><span class="badge badge-success">Dedicated OG</span></td>
+          <td>Product (₹199, 4.9★)</td>
+          <td>Crawlable H1 + copy added</td>
+        </tr>
+        <tr>
+          <td><strong>/proposal</strong></td>
+          <td><span class="badge badge-success">Self-canonical</span></td>
+          <td><span class="badge badge-success">Dedicated OG</span></td>
+          <td>Product Schema</td>
+          <td>Emoji standardized 💍</td>
+        </tr>
+        <tr>
+          <td><strong>/sorry</strong></td>
+          <td><span class="badge badge-success">Self-canonical</span></td>
+          <td><span class="badge badge-success">Dedicated OG</span></td>
+          <td>Product Schema</td>
+          <td>Trust guarantee attached</td>
+        </tr>
+        <tr>
+          <td><strong>/anniversary</strong></td>
+          <td><span class="badge badge-success">Self-canonical</span></td>
+          <td><span class="badge badge-success">Dedicated OG</span></td>
+          <td>Product Schema</td>
+          <td>Live countdown ticker active</td>
+        </tr>
+        <tr>
+          <td><strong>/blog</strong></td>
+          <td><span class="badge badge-success">Self-canonical</span></td>
+          <td><span class="badge badge-success">Image Added</span></td>
+          <td>Article Schema</td>
+          <td>Nav links converted to root anchors</td>
+        </tr>
+        <tr>
+          <td><strong>/faq</strong></td>
+          <td><span class="badge badge-success">Self-canonical</span></td>
+          <td><span class="badge badge-success">Dedicated OG</span></td>
+          <td>FAQPage JSON-LD</td>
+          <td>Pre-purchase friction removed</td>
+        </tr>
+        <tr>
+          <td><strong>/privacy</strong></td>
+          <td><span class="badge badge-success">Fixed self-canonical</span></td>
+          <td><span class="badge badge-success">Dedicated OG</span></td>
+          <td>Standard Legal</td>
+          <td>Company entity disclosed</td>
+        </tr>
+        <tr>
+          <td><strong>/terms</strong></td>
+          <td><span class="badge badge-success">Fixed self-canonical</span></td>
+          <td><span class="badge badge-success">Dedicated OG</span></td>
+          <td>Standard Legal</td>
+          <td>24h refund clause highlighted</td>
+        </tr>
+        <tr>
+          <td><strong>/about</strong></td>
+          <td><span class="badge badge-success">Self-canonical</span></td>
+          <td><span class="badge badge-success">Dedicated OG</span></td>
+          <td>Organization Schema</td>
+          <td>Brand story + 10k users highlighted</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 40px; text-align: center; font-size: 13px; color: var(--mhc-ink-2);">
+      <a href="index.html" style="color: var(--mhc-magenta); font-weight: 700; text-decoration: underline;">← Return to What Heart Says Home</a> · 
+      <a href="nextjs_fixes.md" style="color: var(--mhc-magenta); font-weight: 700; text-decoration: underline;">View Next.js Production Code Snippets →</a>
+    </div>
+  </div>
+
+</body>
+</html>

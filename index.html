@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>What Heart Says — Say it in a way they'll never forget</title>
+  <meta name="description" content="What Heart Says turns sorry, happy birthday, happy anniversary, and 'will you?' into interactive digital cards that open right on their phone. From ₹199."/>
+  <meta name="application-name" content="What Heart Says"/>
+  <meta name="keywords" content="interactive digital cards,digital greeting cards,online sorry card,digital birthday card,anniversary card online,proposal card,send a card India"/>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- Top Notification Banner (Screenshot 1) -->
+  <div class="top-notice-bar">
+    <span>💌 You have 1 card on this device</span>
+    <a href="create.html">Open →</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="mhc-navbar">
+    <div class="nav-container">
+      <a class="brand-link" href="#">
+        <svg width="22" height="20" viewBox="0 0 24 22" aria-hidden="true">
+          <path d="M12 20 C 3 14, 0.5 7.5, 4.5 3.8 c 3.1-2.9 6.2-.8 7.5 1.9 1.3-2.7 4.4-4.8 7.5-1.9 4 3.7 1.5 10.2 -7.5 16.2z" fill="none" stroke="#E0457B" stroke-width="2.4" stroke-linejoin="round"></path>
+        </svg>
+        <span class="brand-text">What Heart Says</span>
+      </a>
+      
+      <a href="#experiences" class="nav-cta">Create a card</a>
+
+      <div style="position:relative">
+        <button type="button" aria-haspopup="true" aria-expanded="false" aria-label="Menu" class="menu-trigger" id="menuToggle">
+          <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+            <path d="M1 1h20M1 8h20M1 15h20" stroke="var(--mhc-ink)" stroke-width="1.8" stroke-linecap="round"></path>
+          </svg>
+        </button>
+        <div class="mhc-menu" id="navMenu">
+          <a href="#demo" data-flow="bday"><span style="font-size:17px">🎂</span> Virtual Birthday Bash</a>
+          <a href="#demo" data-flow="prop"><span style="font-size:17px">💍</span> The Perfect Proposal</a>
+          <a href="#demo" data-flow="sorry"><span style="font-size:17px">🙏</span> Sorry Card</a>
+          <a href="#demo" data-flow="anniv"><span style="font-size:17px">💞</span> Anniversary Special</a>
+          <div class="mhc-menu-divider"></div>
+          <a href="create.html" style="color:var(--mhc-magenta);font-weight:700">✨ Open Card Studio</a>
+          <a href="#experiences">Our Experiences</a>
+          <a href="#how">How it works</a>
+          <a href="#stories">Creators love us</a>
+          <a href="faq.html">FAQ</a>
+          <a href="blog.html">Blog</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="top" class="hero-section">
+    <!-- Ambient Floating Hearts -->
+    <div aria-hidden="true" class="hero-drift-elements">
+      <svg width="22" height="22" viewBox="0 0 30 30" style="position:absolute;left:4%;top:16%;opacity:0.25;animation:hero-drift 8s ease-in-out 0s infinite">
+        <path d="M15 27C4 19 1 11 6 7c3.4-2.8 7-.4 9 2.6 2-3 5.6-5.4 9-2.6 5 4 2 12-9 20z" fill="#C2186B"></path>
+      </svg>
+      <svg width="16" height="16" viewBox="0 0 30 30" style="position:absolute;left:92%;top:22%;opacity:0.25;animation:hero-drift 8s ease-in-out 1.6s infinite">
+        <path d="M15 27C4 19 1 11 6 7c3.4-2.8 7-.4 9 2.6 2-3 5.6-5.4 9-2.6 5 4 2 12-9 20z" fill="#C2186B"></path>
+      </svg>
+      <svg width="14" height="14" viewBox="0 0 30 30" style="position:absolute;left:10%;top:72%;opacity:0.25;animation:hero-drift 8s ease-in-out 3s infinite">
+        <path d="M15 27C4 19 1 11 6 7c3.4-2.8 7-.4 9 2.6 2-3 5.6-5.4 9-2.6 5 4 2 12-9 20z" fill="#C2186B"></path>
+      </svg>
+      <svg width="20" height="20" viewBox="0 0 30 30" style="position:absolute;left:86%;top:66%;opacity:0.25;animation:hero-drift 8s ease-in-out 4.2s infinite">
+        <path d="M15 27C4 19 1 11 6 7c3.4-2.8 7-.4 9 2.6 2-3 5.6-5.4 9-2.6 5 4 2 12-9 20z" fill="#C2186B"></path>
+      </svg>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-subtitle">Interactive digital cards · Made in 2 minutes · 10,000+ happy hearts</div>
+      <h1 class="hero-title">Say it in a way they’ll <em>never forget.</em></h1>
+      <p class="hero-desc">Playful little experiences that open right on their phone — no app, just a link.</p>
+      
+      <div class="hero-pill-grid">
+        <button class="mhc-hero-pill primary" data-flow="bday">
+          <span style="font-size:19px">🎂</span><span>Birthday</span><span aria-hidden="true" style="margin-left:auto;font-weight:700">→</span>
+        </button>
+        <button class="mhc-hero-pill" data-flow="prop">
+          <span style="font-size:19px">💍</span><span>Proposal</span><span aria-hidden="true" style="margin-left:auto;font-weight:700">→</span>
+        </button>
+        <button class="mhc-hero-pill" data-flow="sorry">
+          <span style="font-size:19px">🙏</span><span>Sorry</span><span aria-hidden="true" style="margin-left:auto;font-weight:700">→</span>
+        </button>
+        <button class="mhc-hero-pill" data-flow="anniv">
+          <span style="font-size:19px">💞</span><span>Anniversary</span><span aria-hidden="true" style="margin-left:auto;font-weight:700">→</span>
+        </button>
+      </div>
+
+      <p class="hero-tagline">Preview free · Pay ₹199 · 24-hr refund guarantee if unopened</p>
+      <a href="#demo" class="hero-cue-link" aria-label="See a live demo">
+        Watch one open
+        <span aria-hidden="true" style="font-size:15px">↓</span>
+      </a>
+    </div>
+
+    <!-- Scalloped wave border -->
+    <div aria-hidden="true" class="scallop-divider"></div>
+  </section>
+
+  <!-- Live Demo Section with Interactive Phone -->
+  <section id="demo" class="demo-section">
+    <div class="demo-container">
+      <div class="section-eyebrow">See it live</div>
+      <h2 class="section-heading">This is what they’ll <em>open.</em></h2>
+      
+      <div class="demo-tabs" role="tablist" aria-label="Card demos">
+        <button role="tab" aria-selected="true" class="demo-tab on" data-demo="bday"><span>🎂</span> Birthday</button>
+        <button role="tab" aria-selected="false" class="demo-tab" data-demo="prop"><span>💍</span> Proposal</button>
+        <button role="tab" aria-selected="false" class="demo-tab" data-demo="sorry"><span>🙏</span> Sorry</button>
+        <button role="tab" aria-selected="false" class="demo-tab" data-demo="anniv"><span>💞</span> Anniversary</button>
+      </div>
+
+      <!-- Smartphone Mockup with Real Interactive Card inside iframe -->
+      <div class="phone-mockup-wrapper">
+        <div class="phone-mockup" id="phoneMockup">
+          <div class="phone-notch">
+            <div class="phone-notch-camera"></div>
+            <div class="phone-notch-speaker"></div>
+          </div>
+          <div class="phone-screen">
+            <iframe id="cardPlayerIframe" src="card-interactive.html?type=bday&autoplay=1&preview=1" title="Interactive Card Preview"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <p class="demo-caption" id="demoCaption">A real sample card, playing live.</p>
+      <a id="demoCtaBtn" class="demo-cta-btn" href="create.html?flow=bday">Create a Birthday Card →</a>
+    </div>
+  </section>
+
+  <!-- Experiences Grid Section -->
+  <section id="experiences" class="experiences-section">
+    <div style="max-width:1100px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:36px">
+        <div class="section-eyebrow">Our Experiences</div>
+        <h2 class="section-heading" style="margin:0">Something for every moment</h2>
+      </div>
+
+      <div class="mhc-exp-grid">
+        
+        <!-- Birthday Tile -->
+        <div class="exp-tile" onclick="window.location.href='create.html?flow=bday'">
+          <div class="exp-art" style="background:radial-gradient(120% 80% at 80% 100%,rgba(216,63,135,.25),transparent 60%),linear-gradient(160deg,#1C0817,#33112A)" aria-hidden="true">
+            <div style="position:relative;width:100%;height:100%">
+              <span style="position:absolute;top:0;left:12%;width:6px;height:10px;border-radius:2px;background:#FF5CA8;animation:exp-conf 3.4s linear 0s infinite"></span>
+              <span style="position:absolute;top:0;left:28%;width:6px;height:10px;border-radius:2px;background:#FFD27A;animation:exp-conf 3.4s linear 1.4s infinite"></span>
+              <span style="position:absolute;top:0;left:48%;width:6px;height:10px;border-radius:2px;background:#8CD9FF;animation:exp-conf 3.4s linear 0.6s infinite"></span>
+              <span style="position:absolute;top:0;left:68%;width:6px;height:10px;border-radius:2px;background:#FFD27A;animation:exp-conf 3.4s linear 2s infinite"></span>
+              <span style="position:absolute;top:0;left:86%;width:6px;height:10px;border-radius:2px;background:#FF5CA8;animation:exp-conf 3.4s linear 1s infinite"></span>
+              
+              <!-- Layered Cake with flickering candles -->
+              <div style="position:absolute;left:50%;bottom:22px;transform:translateX(-50%);width:132px;height:96px">
+                <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:132px;height:10px;border-radius:50%;background:#EFDFC8"></div>
+                <div style="position:absolute;bottom:7px;left:50%;transform:translateX(-50%);width:112px;height:42px;border-radius:8px 8px 5px 5px;background:linear-gradient(180deg,#2A1A5E,#160E36)"></div>
+                <div style="position:absolute;bottom:45px;left:50%;transform:translateX(-50%);width:114px;height:9px;border-radius:6px;background:linear-gradient(180deg,#fff,#C9B8FF)"></div>
+                <div style="position:absolute;bottom:52px;left:50%;transform:translateX(-50%);width:76px;height:30px;border-radius:7px 7px 4px 4px;background:linear-gradient(180deg,#4A2A8E,#2A1A5E)"></div>
+                <div style="position:absolute;bottom:79px;left:50%;transform:translateX(-50%);width:78px;height:8px;border-radius:5px;background:linear-gradient(180deg,#fff,#E3B8FF)"></div>
+                <!-- Candle 1 -->
+                <div style="position:absolute;bottom:85px;left:calc(50% + -22px)">
+                  <div style="position:absolute;left:-3px;bottom:0;width:6px;height:20px;border-radius:3px;background:repeating-linear-gradient(45deg,#fff 0 4px,#FF5CA8 4px 8px)"></div>
+                  <div style="position:absolute;left:0;bottom:22px;width:10px;height:14px;border-radius:50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff 0%,#FFD27A 40%,#F59E0B 75%,#E2680B 100%);box-shadow:0 0 14px 4px rgba(245,158,11,.45);transform:translateX(-50%);animation:exp-flick .55s ease-in-out 0s infinite alternate"></div>
+                </div>
+                <!-- Candle 2 -->
+                <div style="position:absolute;bottom:85px;left:calc(50% + 0px)">
+                  <div style="position:absolute;left:-3px;bottom:0;width:6px;height:20px;border-radius:3px;background:repeating-linear-gradient(45deg,#fff 0 4px,#FF5CA8 4px 8px)"></div>
+                  <div style="position:absolute;left:0;bottom:22px;width:10px;height:14px;border-radius:50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff 0%,#FFD27A 40%,#F59E0B 75%,#E2680B 100%);box-shadow:0 0 14px 4px rgba(245,158,11,.45);transform:translateX(-50%);animation:exp-flick .55s ease-in-out 0.18s infinite alternate"></div>
+                </div>
+                <!-- Candle 3 -->
+                <div style="position:absolute;bottom:85px;left:calc(50% + 22px)">
+                  <div style="position:absolute;left:-3px;bottom:0;width:6px;height:20px;border-radius:3px;background:repeating-linear-gradient(45deg,#fff 0 4px,#FF5CA8 4px 8px)"></div>
+                  <div style="position:absolute;left:0;bottom:22px;width:10px;height:14px;border-radius:50%/60% 60% 40% 40%;background:radial-gradient(circle at 50% 70%,#fff 0%,#FFD27A 40%,#F59E0B 75%,#E2680B 100%);box-shadow:0 0 14px 4px rgba(245,158,11,.45);transform:translateX(-50%);animation:exp-flick .55s ease-in-out 0.36s infinite alternate"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="exp-content">
+            <h3 class="exp-title"><span>🎂</span> Virtual Birthday Bash</h3>
+            <p class="exp-description">A countdown to midnight, flickering candles they blow out themselves, and a letter written by you. A whole party on their lock screen.</p>
+            <div class="exp-footer">
+              <div class="exp-chip-group">
+                <span class="exp-chip">⚡ 2 min to make</span>
+                <span class="exp-chip">₹199</span>
+              </div>
+              <a href="create.html?flow=bday" class="exp-action-btn">
+                Create Now
+                <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
+                  <path d="M1 6h11.2M8 1.4 12.7 6 8 10.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proposal Tile -->
+        <div class="exp-tile" onclick="window.location.href='create.html?flow=prop'">
+          <div class="exp-art" style="background:linear-gradient(180deg,#FFE1EC,#F6B7D2)" aria-hidden="true">
+            <div style="text-align:center">
+              <div style="font-family:var(--mhc-display);font-style:italic;font-size:19px;color:#7A0F37;margin-bottom:16px">Will you marry me?</div>
+              <div style="display:flex;gap:12px;justify-content:center;align-items:center">
+                <span style="padding:9px 22px;border-radius:999px;background:#C2185B;color:#fff;font-weight:700;font-size:13.5px;animation:exp-yes-pulse 2.4s ease infinite">Yes 💍</span>
+                <span style="padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.95);color:#7A0F37;border:1px solid rgba(122,15,55,.15);font-weight:600;font-size:12.5px;animation:exp-no-hop 4.5s cubic-bezier(.34,1.56,.64,1) infinite">No</span>
+              </div>
+            </div>
+          </div>
+          <div class="exp-content">
+            <h3 class="exp-title"><span>💍</span> The Perfect Proposal</h3>
+            <p class="exp-description">Ask the question. The “No” button playfully dodges every tap until they give in and say “Yes!” — then the celebration begins. The unrejectable love card.</p>
+            <div class="exp-footer">
+              <div class="exp-chip-group">
+                <span class="exp-chip">⚡ 2 min to make</span>
+                <span class="exp-chip">₹199</span>
+              </div>
+              <a href="create.html?flow=prop" class="exp-action-btn">
+                Create Now
+                <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
+                  <path d="M1 6h11.2M8 1.4 12.7 6 8 10.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sorry Tile -->
+        <div class="exp-tile" onclick="window.location.href='create.html?flow=sorry'">
+          <div class="exp-art" style="background:radial-gradient(120% 80% at 20% 0%,rgba(88,28,78,.5),transparent 65%),linear-gradient(160deg,#2A0E22,#1C0817)" aria-hidden="true">
+            <div style="position:relative;width:100%;height:100%">
+              <span style="position:absolute;left:14%;top:22%;width:3px;height:3px;border-radius:50%;background:#FF8FC0;animation:exp-star 3.6s ease-in-out 0s infinite"></span>
+              <span style="position:absolute;left:30%;top:58%;width:2px;height:2px;border-radius:50%;background:#FF8FC0;animation:exp-star 3.6s ease-in-out 1.2s infinite"></span>
+              <span style="position:absolute;left:72%;top:20%;width:2.5px;height:2.5px;border-radius:50%;background:#FF8FC0;animation:exp-star 3.6s ease-in-out 0.6s infinite"></span>
+              <span style="position:absolute;left:84%;top:60%;width:3px;height:3px;border-radius:50%;background:#FF8FC0;animation:exp-star 3.6s ease-in-out 1.8s infinite"></span>
+              <!-- Wax Sealed Heart Envelope -->
+              <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:148px;height:96px;border-radius:10px;background:linear-gradient(180deg,#FFF1F5,#F8DCE5);box-shadow:0 22px 40px -18px rgba(216,63,135,.55);overflow:hidden">
+                <div style="position:absolute;left:0;top:0;width:100%;height:62%;background:linear-gradient(180deg,#FAE0E8,#F2C7D4);clip-path:polygon(0 0,100% 0,50% 94%)"></div>
+                <div style="position:absolute;left:0;bottom:0;width:100%;height:64%;background:linear-gradient(180deg,#F8D8E1,#EFB7C8);clip-path:polygon(0 36%,50% 100%,100% 36%,100% 100%,0 100%)"></div>
+                <svg width="30" height="30" viewBox="0 0 30 30" style="position:absolute;left:50%;top:54%;animation:exp-seal 1.6s ease-in-out infinite;transform:translate(-50%,-50%)">
+                  <path d="M15 27C4 19 1 11 6 7c3.4-2.8 7-.4 9 2.6 2-3 5.6-5.4 9-2.6 5 4 2 12-9 20z" fill="#D83F87"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="exp-content">
+            <h3 class="exp-title"><span>🙏</span> Sorry Card</h3>
+            <p class="exp-description">Say it the right way. A sealed envelope, your words revealed gently, one line at a time — no awkward face-to-face needed.</p>
+            <div class="exp-footer">
+              <div class="exp-chip-group">
+                <span class="exp-chip">⚡ 2 min to make</span>
+                <span class="exp-chip">₹199</span>
+              </div>
+              <a href="create.html?flow=sorry" class="exp-action-btn">
+                Create Now
+                <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
+                  <path d="M1 6h11.2M8 1.4 12.7 6 8 10.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anniversary Tile -->
+        <div class="exp-tile" onclick="window.location.href='create.html?flow=anniv'">
+          <div class="exp-art" style="background:linear-gradient(180deg,#FBDCE8,#F5BFD6)" aria-hidden="true">
+            <div style="text-align:center">
+              <div style="font-family:var(--mhc-display);font-style:italic;font-size:16px;color:#7A2B4E;margin-bottom:12px">Your day arrives in</div>
+              <div style="display:flex;gap:7px;justify-content:center">
+                <div style="min-width:50px;background:#fff;border:1px solid rgba(122,15,55,.12);border-radius:12px;padding:9px 6px 7px;box-shadow:0 10px 24px -16px rgba(31,20,22,.28)">
+                  <div style="font-family:var(--mhc-display);font-weight:600;font-size:23px;line-height:1;color:#E0457B" id="counterDays">14</div>
+                  <div style="font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#A4607F;margin-top:2px">days</div>
+                </div>
+                <div style="min-width:50px;background:#fff;border:1px solid rgba(122,15,55,.12);border-radius:12px;padding:9px 6px 7px;box-shadow:0 10px 24px -16px rgba(31,20,22,.28)">
+                  <div style="font-family:var(--mhc-display);font-weight:600;font-size:23px;line-height:1;color:#E0457B" id="counterHrs">08</div>
+                  <div style="font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#A4607F;margin-top:2px">hrs</div>
+                </div>
+                <div style="min-width:50px;background:#fff;border:1px solid rgba(122,15,55,.12);border-radius:12px;padding:9px 6px 7px;box-shadow:0 10px 24px -16px rgba(31,20,22,.28)">
+                  <div style="font-family:var(--mhc-display);font-weight:600;font-size:23px;line-height:1;color:#E0457B" id="counterMin">42</div>
+                  <div style="font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#A4607F;margin-top:2px">min</div>
+                </div>
+                <div style="min-width:50px;background:#fff;border:1px solid rgba(122,15,55,.12);border-radius:12px;padding:9px 6px 7px;box-shadow:0 10px 24px -16px rgba(31,20,22,.28)">
+                  <div style="font-family:var(--mhc-display);font-weight:600;font-size:23px;line-height:1;color:#E0457B" id="counterSec">19</div>
+                  <div style="font-size:8.5px;letter-spacing:.1em;text-transform:uppercase;color:#A4607F;margin-top:2px">sec</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="exp-content">
+            <h3 class="exp-title"><span>💞</span> Anniversary Special</h3>
+            <p class="exp-description">A live countdown to your day, a love meter they fill up, and a heartfelt card made just for the two of you. Your story, animated.</p>
+            <div class="exp-footer">
+              <div class="exp-chip-group">
+                <span class="exp-chip">⚡ 2 min to make</span>
+                <span class="exp-chip">₹199</span>
+              </div>
+              <a href="create.html?flow=anniv" class="exp-action-btn">
+                Create Now
+                <svg width="14" height="12" viewBox="0 0 14 12" fill="none" aria-hidden="true">
+                  <path d="M1 6h11.2M8 1.4 12.7 6 8 10.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how" class="hiw-section">
+    <div class="hiw-card-wrapper">
+      <div style="text-align:center;margin-bottom:36px">
+        <div class="section-eyebrow">How it works</div>
+        <h2 class="section-heading" style="margin:0">Three steps. <em>Two minutes.</em></h2>
+      </div>
+
+      <div class="hiw-grid">
+        <div class="hiw-step-item">
+          <div class="hiw-step-badge">1</div>
+          <div class="hiw-step-emoji">✍️</div>
+          <h3 class="hiw-step-title">Make it theirs</h3>
+          <p class="hiw-step-desc">Their name, your words, two minutes. Stuck on what to say? We'll suggest the lines — you stay in charge.</p>
+        </div>
+
+        <div class="hiw-step-item">
+          <div class="hiw-step-badge">2</div>
+          <div class="hiw-step-emoji">👀</div>
+          <h3 class="hiw-step-title">Preview it free</h3>
+          <p class="hiw-step-desc">Play the whole card end to end, exactly as they'll see it — every animation, before you pay a rupee.</p>
+        </div>
+
+        <div class="hiw-step-item">
+          <div class="hiw-step-badge">3</div>
+          <div class="hiw-step-emoji">🔗</div>
+          <h3 class="hiw-step-title">Pay, then share the link</h3>
+          <p class="hiw-step-desc">WhatsApp it, text it, drop it anywhere. They tap, the card opens. They can replay it forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Creators Love Us Section -->
+  <section id="stories" class="stories-section">
+    <div class="stories-container">
+      <h2 style="font-weight:700;font-size:clamp(28px, 5vw, 38px);letter-spacing:-.01em;color:var(--mhc-ink);margin:0 0 28px">Creators love us</h2>
+      
+      <div class="mhc-quote-grid">
+        <div class="quote-card">
+          <p class="quote-text"><span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-right:4px">“</span>They cried. Then they laughed. Then they said yes.<span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-left:4px">”</span></p>
+          <div class="quote-divider"></div>
+          <div class="quote-author">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#FBE3EB,#F7C5D3);color:#C2186B">A</div>
+            <div style="line-height:1.45">
+              <b style="font-weight:700;display:block;font-size:15px;color:var(--mhc-ink)">@arjun.s</b>
+              <span style="color:var(--mhc-star);font-size:12px;letter-spacing:2px">★★★★★</span>
+              <span style="display:block;color:var(--mhc-ink-2);font-size:13px">Proposed in March ✨</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <p class="quote-text"><span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-right:4px">“</span>My mum opened it three times in a row. Then sent it to my dad.<span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-left:4px">”</span></p>
+          <div class="quote-divider"></div>
+          <div class="quote-author">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#FCE3B7,#F4C57A);color:#B45309">P</div>
+            <div style="line-height:1.45">
+              <b style="font-weight:700;display:block;font-size:15px;color:var(--mhc-ink)">@priya.makes</b>
+              <span style="color:var(--mhc-star);font-size:12px;letter-spacing:2px">★★★★★</span>
+              <span style="display:block;color:var(--mhc-ink-2);font-size:13px">Sent one to her mum ✨</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <p class="quote-text"><span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-right:4px">“</span>Best apology I've ever sent. The envelope animation made her melt.<span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-left:4px">”</span></p>
+          <div class="quote-divider"></div>
+          <div class="quote-author">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#F8DBC0,#E8B187);color:#7c3a06">R</div>
+            <div style="line-height:1.45">
+              <b style="font-weight:700;display:block;font-size:15px;color:var(--mhc-ink)">@rohit_2x</b>
+              <span style="color:var(--mhc-star);font-size:12px;letter-spacing:2px">★★★★★</span>
+              <span style="display:block;color:var(--mhc-ink-2);font-size:13px">Sent a Sorry card ✨</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <p class="quote-text"><span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-right:4px">“</span>Worth it just for the 'No' button refusing to be tapped. We were both crying laughing.<span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-left:4px">”</span></p>
+          <div class="quote-divider"></div>
+          <div class="quote-author">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#F7D4DD,#D97A95);color:#fff">M</div>
+            <div style="line-height:1.45">
+              <b style="font-weight:700;display:block;font-size:15px;color:var(--mhc-ink)">@maya.k</b>
+              <span style="color:var(--mhc-star);font-size:12px;letter-spacing:2px">★★★★★</span>
+              <span style="display:block;color:var(--mhc-ink-2);font-size:13px">Newly engaged ✨</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <p class="quote-text"><span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-right:4px">“</span>It felt like a tiny film someone made for me. Just… for me.<span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-left:4px">”</span></p>
+          <div class="quote-divider"></div>
+          <div class="quote-author">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#FBE3EB,#F7C5D3);color:#C2186B">I</div>
+            <div style="line-height:1.45">
+              <b style="font-weight:700;display:block;font-size:15px;color:var(--mhc-ink)">@ishita.w</b>
+              <span style="color:var(--mhc-star);font-size:12px;lette        <div class="quote-card">
+          <p class="quote-text"><span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-right:4px">“</span>₹199 well spent. Way better than another forwarded message.<span style="color:#FF5CA8;font-weight:700;font-size:18px;margin-left:4px">”</span></p>
+          <div class="quote-divider"></div>
+          <div class="quote-author">
+            <div class="quote-avatar" style="background:linear-gradient(135deg,#FCE3B7,#F4C57A);color:#B45309">K</div>
+            <div style="line-height:1.45">
+              <b style="font-weight:700;display:block;font-size:15px;color:var(--mhc-ink)">@karan.d</b>
+              <span style="color:var(--mhc-star);font-size:12px;letter-spacing:2px">★★★★★</span>
+              <span style="display:block;color:var(--mhc-ink-2);font-size:13px">Sent a Birthday card ✨</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action -->
+  <section class="final-cta-section">
+    <div class="final-cta-box">
+      <span aria-hidden="true" style="position:absolute;top:22px;left:6%;font-size:28px;opacity:0.55;animation:fcta-drift 7s ease-in-out 0s infinite">🥹</span>
+      <span aria-hidden="true" style="position:absolute;bottom:24px;left:13%;font-size:28px;opacity:0.55;animation:fcta-drift 7s ease-in-out 1.2s infinite">😍</span>
+      <span aria-hidden="true" style="position:absolute;top:28px;right:7%;font-size:28px;opacity:0.55;animation:fcta-drift 7s ease-in-out 2.4s infinite">🥰</span>
+      <span aria-hidden="true" style="position:absolute;bottom:20px;right:14%;font-size:28px;opacity:0.55;animation:fcta-drift 7s ease-in-out 3.6s infinite">💌</span>
+      
+      <h2 class="final-cta-heading">Some things deserve more than a <em>text.</em></h2>
+      <p class="final-cta-desc">Pick a card. Make it theirs. Send it in two minutes — from ₹199.</p>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+        <a class="fcta-btn" href="#experiences">Start with a card →</a>
+        <span style="font-size:13px;opacity:0.9;font-weight:500">Preview free · Pay ₹199 · 24h refund guarantee if unopened</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mhc-footer">
+    <div class="mhc-foot-grid">
+      <div>
+        <h4 class="mhc-foot-h">Experiences</h4>
+        <a class="mhc-foot-link" href="birthday.html">Virtual Birthday Bash</a>
+        <a class="mhc-foot-link" href="proposal.html">The Perfect Proposal</a>
+        <a class="mhc-foot-link" href="sorry.html">Sorry Card</a>
+        <a class="mhc-foot-link" href="anniversary.html">Anniversary Special</a>
+      </div>
+      <div>
+        <h4 class="mhc-foot-h">About Us</h4>
+        <a class="mhc-foot-link" href="about.html">About What Heart Says</a>
+        <a class="mhc-foot-link" href="blog.html">Blog & Stories</a>
+        <a class="mhc-foot-link" href="faq.html">FAQ</a>
+        <a class="mhc-foot-link" href="privacy.html">Privacy Policy</a>
+        <a class="mhc-foot-link" href="terms.html">Terms of Use</a>
+      </div>
+      <div>
+        <h4 class="mhc-foot-h">Contact & Legal</h4>
+        <p style="font-size:14px;line-height:1.7;color:var(--mhc-ink-2);margin:0 0 10px">
+          <b>Zenaclub Tech (OPC) Private Limited</b><br/>
+          Faridabad, Haryana, India
+        </p>
+        <p style="font-size:14px;line-height:1.7;color:var(--mhc-ink-2);margin:0 0 10px">
+          Questions or concerns: <a href="mailto:support@whatheartsays.com" class="mhc-foot-link" style="display:inline;padding:0">support@whatheartsays.com</a>
+        </p>
+        <p style="font-size:13px;line-height:1.6;color:var(--mhc-ink-2);margin:0">
+          Refund Policy: Full refund within 24 hours if the recipient hasn't opened the link.
+        </p>
+      </div>
+      <div>
+        <h4 class="mhc-foot-h">Follow Us</h4>
+        <a href="https://instagram.com/heartsays" target="_blank" rel="noreferrer" aria-label="Instagram" style="width:38px;height:38px;border-radius:10px;border:1px solid rgba(38,28,34,.2);display:inline-flex;align-items:center;justify-content:center;color:var(--mhc-ink)">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <circle cx="17.5" cy="6.5" r=".5" fill="currentColor"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div style="max-width:1100px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(38,28,34,.1);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--mhc-ink-2)">
+      <span style="display:inline-flex;align-items:center;gap:7px">
+        <svg width="16" height="15" viewBox="0 0 24 22" aria-hidden="true">
+          <path d="M12 20 C 3 14, 0.5 7.5, 4.5 3.8 c 3.1-2.9 6.2-.8 7.5 1.9 1.3-2.7 4.4-4.8 7.5-1.9 4 3.7 1.5 10.2 -7.5 16.2z" fill="none" stroke="#E0457B" stroke-width="2.4" stroke-linejoin="round"></path>
+        </svg>
+        <b style="font-weight:700;color:var(--mhc-ink)">What Heart Says</b>
+      </span>
+      <span>© 2026 Zenaclub Tech (OPC) Private Limited · Made with care in Faridabad.</span>
+    </div>
+  </footer>
+
+  <!-- Sticky Bottom Bar on Mobile -->
+  <div class="hs-sticky-bar">
+    <div style="font-size:12.5px;font-weight:700;color:var(--mhc-ink-2);line-height:1.35;min-width:0">From ₹199 · ready in 2 min</div>
+    <a style="flex-shrink:0;display:inline-flex;align-items:center;gap:7px;background:var(--mhc-magenta);color:#fff;padding:12px 20px;border-radius:999px;font-weight:700;font-size:14.5px;box-shadow:0 14px 28px -12px rgba(194,24,107,.6);white-space:nowrap" href="create.html?flow=bday">Start your card →</a>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
